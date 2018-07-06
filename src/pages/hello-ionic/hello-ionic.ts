@@ -4,6 +4,7 @@ import { NavController } from 'ionic-angular';
 import { ProduitsProvider } from '../../providers/produits/produits';
 import { Camera, CameraOptions } from '@ionic-native/camera';
 import { Brightness } from '@ionic-native/brightness';
+import { Vibration } from '@ionic-native/vibration';
  
 @Component({
   selector: 'page-hello-ionic',
@@ -12,7 +13,7 @@ import { Brightness } from '@ionic-native/brightness';
 export class HelloIonicPage {
   public produits:any;
   public luminosite:number = 100;
-  constructor(public navCtrl : NavController, public prod: ProduitsProvider, public camera: Camera, public brightness: Brightness) {
+  constructor(public navCtrl : NavController, public prod: ProduitsProvider, public camera: Camera, public brightness: Brightness, public vibration: Vibration) {
     this.produits = this.prod.getProduit();
   }
 
@@ -45,5 +46,7 @@ export class HelloIonicPage {
   setLumi() {
     let res = this.luminosite / 100;
     this.brightness.setBrightness(res);
+    this.vibration.vibrate([2000,1000,2000]);
+    
   }
 }

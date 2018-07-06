@@ -17,6 +17,8 @@ import { Camera } from '@ionic-native/camera';
 
 import { Brightness } from '@ionic-native/brightness';
 
+import { Vibration } from '@ionic-native/vibration';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -43,7 +45,8 @@ import { Brightness } from '@ionic-native/brightness';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     ProduitsProvider,
     Camera,
-    Brightness
+    Brightness,
+    Vibration
   ]
 })
 export class AppModule {}
