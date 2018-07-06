@@ -15,6 +15,8 @@ import { ProduitsProvider } from '../providers/produits/produits';
 
 import { Camera } from '@ionic-native/camera';
 
+import { Brightness } from '@ionic-native/brightness';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -40,7 +42,8 @@ import { Camera } from '@ionic-native/camera';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     ProduitsProvider,
-    Camera
+    Camera,
+    Brightness
   ]
 })
 export class AppModule {}

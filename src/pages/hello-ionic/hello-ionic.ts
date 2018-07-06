@@ -1,3 +1,4 @@
+import { Brightness } from '@ionic-native/brightness';
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
@@ -10,8 +11,16 @@ import { Camera, CameraOptions } from '@ionic-native/camera';
 })
 export class HelloIonicPage {
   public produits:any;
-  constructor(public navCtrl : NavController, public prod: ProduitsProvider, public camera: Camera) {
+  public luminosite:number = 100;
+  constructor(public navCtrl : NavController, public prod: ProduitsProvider, public camera: Camera, public brightness: Brightness) {
     this.produits = this.prod.getProduit();
+  }
+
+  delProduit(produit) {
+    var index = this.produits.indexOf(produit);
+    if (index > -1) {
+      this.produits.splice(index, 1);
+    }
   }
 
   takePic() {
@@ -31,5 +40,10 @@ export class HelloIonicPage {
     }, (err) => {
      // Handle error
     });
+  }
+
+  setLumi() {
+    let res = this.luminosite / 100;
+    this.brightness.setBrightness(res);
   }
 }

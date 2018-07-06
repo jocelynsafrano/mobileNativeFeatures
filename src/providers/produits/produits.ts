@@ -17,11 +17,4 @@ export class ProduitsProvider {
   getProduit() {
     return ["savon", "brosse", "dentifrice", "viande", "riz"];
   }
-
-  delProduit(produit) {
-    var index = this.produits.indexOf(produit);
-    if (index > -1) {
-      this.produits.splice(index, 1);
-    }
-  }
 }

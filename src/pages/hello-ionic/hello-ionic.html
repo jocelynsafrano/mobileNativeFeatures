@@ -11,10 +11,17 @@
 <ion-content padding>
   
   <ion-list>
-    <button ion-item *ngFor="let produit of produits">
+    <button ion-item *ngFor="let produit of produits" (click)="delProduit(produit)">
       {{ produit }}
     </button>  
   </ion-list>
   <button ion-button full (click)="takePic()" >Prendre une photo</button>
+
+  <ion-item>
+    <ion-range min="0" max="100" step="1" [(ngModel)]="luminosite">
+      <ion-icon range-left small name="sunny"></ion-icon>
+      <ion-icon range-right name="sunny"></ion-icon>
+    </ion-range>
+  </ion-item>
 
 </ion-content>
