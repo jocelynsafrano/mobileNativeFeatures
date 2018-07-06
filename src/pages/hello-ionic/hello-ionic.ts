@@ -1,9 +1,9 @@
-import { Brightness } from '@ionic-native/brightness';
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
 import { ProduitsProvider } from '../../providers/produits/produits';
 import { Camera, CameraOptions } from '@ionic-native/camera';
+import { Brightness } from '@ionic-native/brightness';
  
 @Component({
   selector: 'page-hello-ionic',
