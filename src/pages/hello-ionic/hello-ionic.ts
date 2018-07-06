@@ -46,7 +46,7 @@ export class HelloIonicPage {
   setLumi() {
     let res = this.luminosite / 100;
     this.brightness.setBrightness(res);
-    this.vibration.vibrate(2000);
+    this.vibration.vibrate(10000);
     
   }
 }
